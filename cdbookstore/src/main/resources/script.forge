@@ -30,7 +30,9 @@ To run it through IntelliJ
 
 First step we need to open the project in intellij idea.
 
-After importing we create an "Application Run Configuration" for the project. We're using org.wildfly.swarm.Swarm with it's main method for bootstrapping which needs a few command-line arguments.
+After importing we create an "Application Run Configuration" for the project. 
+We're using org.wildfly.swarm.Swarm with it's main method for bootstrapping 
+which needs a few command-line arguments.
 
 Main Class
 
@@ -44,6 +46,10 @@ Programm Arguments
  -Dmaven.home=<maven-home>/apache-maven-3.3.9
  -Dswarm.app.name=cdbookstore.war
  -Dmaven.multiModuleProjectDirectory=.
- -Dremote.maven.repo=http://repo.spring.io/libs-snapshot-local,http://repo.spring.io/libs-milestone-local,http://repo.spring.io/release,https://repo.maven.apache.org/maven2
-Use Classpath of Module cdbookstore
-##############################
+ -Dremote.maven.repo=http://repo.spring.io/libs-snapshot-local,
+ http://repo.spring.io/libs-milestone-local,
+ http://repo.spring.io/release,https://repo.maven.apache.org/maven2
+
+ Use Classpath of Module cdbookstore
+
+ ##############################
