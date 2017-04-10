@@ -1,0 +1,49 @@
+Install Forge offline version(this is recommended version)
+Forge Script on Forge Shell
+>project-new --named cdbookstore --stack JAVA_EE_7 --topLevelPackage com.myforge.sample.cdbookstore
+>rest-new-endpoint --named HelloEndPoint --path hello --methods GET
+	---If wildfly-swarm addon is not installed already--
+		>addon-install-from-git --url https://github.com/forge/wildfly-swarm-addon.git
+
+	-- Context-path is the path of this application--
+>wildfly-swarm-setup --context-path cdbookstore 
+
+	-- Detect installed fractions ---
+>wildfly-swarm-detect-fractions
+
+	-- Install the necessary fractions of swarm -- 
+>wildfly-swarm-add-fraction --fractions jaxrs	
+
+	-- build project --
+>build	
+	-- this build command perfoms mvn clean install -- 
+	
+	-- Open a cmd console and execute the ubar jar that swarm created ---
+>java -jar target/cdbookstore-swarm.jar
+
+    -- Make the rest call localhost:<port>/cdbookstore/rest/hello on broser-- 			
+	-- or curl command - curl -v http://localhost:<port>/cdbookstore/rest/hello
+			
+			
+#############################
+To run it through IntelliJ
+
+First step we need to open the project in intellij idea.
+
+After importing we create an "Application Run Configuration" for the project. We're using org.wildfly.swarm.Swarm with it's main method for bootstrapping which needs a few command-line arguments.
+
+Main Class
+
+org.wildfly.swarm.Swarm
+
+Programm Arguments
+
+ -Dswarm.context.path=cdbookstore
+ -Dswarm.http.port=8080
+ -Dswarm.https.port=8443
+ -Dmaven.home=<maven-home>/apache-maven-3.3.9
+ -Dswarm.app.name=cdbookstore.war
+ -Dmaven.multiModuleProjectDirectory=.
+ -Dremote.maven.repo=http://repo.spring.io/libs-snapshot-local,http://repo.spring.io/libs-milestone-local,http://repo.spring.io/release,https://repo.maven.apache.org/maven2
+Use Classpath of Module cdbookstore
+##############################
