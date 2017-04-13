@@ -46,7 +46,8 @@ Programm Arguments
  -Dmaven.home=<maven-home>/apache-maven-3.3.9
  -Dswarm.app.name=cdbookstore.war
  -Dmaven.multiModuleProjectDirectory=.
- -Dremote.maven.repo=http://repo.spring.io/libs-snapshot-local,
+ -Dremote.maven.repo= = <remote repo url>
+ eg: -Dremote.maven.repo=http://repo.spring.io/libs-snapshot-local,
  http://repo.spring.io/libs-milestone-local,
  http://repo.spring.io/release,https://repo.maven.apache.org/maven2
 
