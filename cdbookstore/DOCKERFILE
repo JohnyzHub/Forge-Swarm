@@ -1,0 +1,7 @@
+FROM maven:3 as BUILD
+COPY src /src
+COPY pom.xml pom.xml
+RUN mvn clean install
+
+FROM jboss/wildfly
+COPY --from=BUILD /target/cdbookstore.war /opt/jboss/wildfly/standalone/deployments/cdbookstore.war
