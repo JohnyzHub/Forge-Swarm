@@ -1,9 +1,11 @@
 
-	--> Stop the current running docker daemon
-		docker-machine stop <name>
-	--> Create a docker daemon
-			docker-machine create --driver virtualbox <name>
-			Eg: docker-machine create --driver virtualbox mydockervm
+	[OPTIONAL]
+		--> Stop the current running docker container
+			docker-machine stop <name>
+		--> Create a docker daemon
+				docker-machine create --driver virtualbox <name>
+				Eg: docker-machine create --driver virtualbox mydockervm
+	
 	-->	Git clone this repository
 	--> From the docker quickstart terminal, move to the base directory of this project
 			Eg: cdbookstore>
@@ -16,17 +18,17 @@
 			cdbookstore> docker ps
 					This should show image cdbookstore status 'UP...'
 			cdbookstore>docker-machine ls
-					This should show the daemon mydockervm running and active.
+					This should show 'mydockervm' container running and active.
 
 
 	Open browser and execute below rest end point
 	http://<ip>:8080/cdbookstore/rest/hello
 
-	IP in above rest call should match ip of the mydockervm appear in 'docker-machine ls' command
+	IP in above rest call should match ip of the mydockervm appear through 'docker-machine ls' command
 
-	If everything goes ok, you should see below response in the browser
+	If everything is good, you should see below response in the browser
 
-	method doGet invoked: Sun Jul 09 13:55:12 UTC 2017
+		method doGet invoked: Sun Jul 09 13:55:12 UTC 2017
 
 	<time> is the local time of the remote wildfly server.
 
