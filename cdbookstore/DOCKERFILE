@@ -1,7 +1,9 @@
-FROM maven:3 as BUILD
+FROM maven:latest as BUILD
+MAINTAINER hub.docker.com/r/johnyzhub
 COPY src /src
 COPY pom.xml pom.xml
 RUN mvn clean install
 
 FROM jboss/wildfly
+MAINTAINER hub.docker.com/r/johnyzhub
 COPY --from=BUILD /target/cdbookstore.war /opt/jboss/wildfly/standalone/deployments/cdbookstore.war
