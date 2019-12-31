@@ -65,11 +65,17 @@
 	--> pull the image from docker hub
 			docker pull <accountid/imagename>
 	--> Run the image pulled:
-			cdbookstore>docker run -it -p 8080:8080 cdbookstore
-
+			cdbookstore>docker container run -d --name bookcontainer -p 8080:8080 <imageid>
+                    This creates a container with the name bookcontainer and runs the image on it.     
+	
 	Execute the rest end point
 	http://<ip>:8080/cdbookstore/rest/hello		
 
 	If everything goes well, the time stamp of the remote wildfly server should appear.
-
+    
+      >docker ps -a   shold list the details of the container bookcontainer 
+      >docker stop <container name>   should stop the container
+      >docker start <container name> should start the container again.
+      >docker rm <container name> should remove the stopped container 
+	
 	Happy Dockering :)
