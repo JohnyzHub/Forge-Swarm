@@ -70,6 +70,7 @@
 	
 	Execute the rest end point
 	http://<ip>:8080/cdbookstore/rest/hello		
+	 Eg: http://192.168.99.100:8080/cdbookstore/rest/hello  assuming 192.168.99.100 is the container ip
 
 	If everything goes well, the time stamp of the remote wildfly server should appear.
     
